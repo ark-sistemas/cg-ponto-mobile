@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_intro">CG Ponto</string>
+
+    <string name="label_user">Usuário</string>
+    <string name="label_passwd">Senha</string>
+    <string name="btn_login">Entrar</string>
+    <string name="btn_send_email">Enviar</string>
+    <string name="label_forgot_passwd">Esqueci minha senha</string>
+    <string name="label_passwd_redefinition">Redefinir senha</string>
+
+</resources>

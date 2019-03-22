@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".activity.ForgotPasswdActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text="@string/label_passwd_redefinition"
+            android:textColor="@color/textColor"/>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="10dp" />
+
+
+        <EditText
+            android:id="@+id/txtEmailRedef"
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:theme="@style/EditTextViewFocus"
+            android:hint="@string/hint_email_redef"
+            android:inputType="textEmailSubject"/>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="10dp" />
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:background="@drawable/btn_rounded"
+            android:text="@string/btn_send_email"
+            android:textColor="@color/buttonTextColor"
+            android:onClick="sendEmail"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

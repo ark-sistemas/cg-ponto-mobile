@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_user">Digite seu usuário</string>
+    <string name="hint_pass">Digite sua senha</string>
+    <string name="hint_email_redef">Digite seu e-mail cadastrado</string>
+</resources>
