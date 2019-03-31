@@ -25,4 +25,9 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(LoginActivity.this, ForgotPasswdActivity.class);
         startActivity(i);
     }
+
+    public void login(View view) {
+        Intent i = new Intent(LoginActivity.this, CameraActivity.class);
+        startActivity(i);
+    }
 }
