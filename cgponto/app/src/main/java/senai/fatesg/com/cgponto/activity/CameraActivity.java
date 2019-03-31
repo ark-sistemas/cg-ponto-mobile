@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
@@ -44,6 +45,7 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+//        FirebaseApp.initializeApp(this);
         init();
         buttonEvent();
         cameraListener();
@@ -77,9 +79,10 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
         btnPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(CameraActivity.this, String.valueOf(graphicOverlay.getHeight()), Toast.LENGTH_LONG).show();
+                graphicOverlay.clear();
                 cameraView.start();
                 cameraView.captureImage();
-                graphicOverlay.clear();
             }
         });
     }
@@ -117,11 +120,14 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
     }
 
     private void runFaceDetector(Bitmap bitmap) {
-
+        FirebaseApp.initializeApp(this);
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 
-        FirebaseVisionFaceDetectorOptions options = new FirebaseVisionFaceDetectorOptions.Builder()
-                .build();
+        FirebaseVisionFaceDetectorOptions options =
+                new FirebaseVisionFaceDetectorOptions.Builder()
+                        .setClassificationMode(FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS)
+                        .enableTracking()
+                        .build();
 
         FirebaseVisionFaceDetector detector = FirebaseVision.getInstance()
                 .getVisionFaceDetector(options);
@@ -131,13 +137,8 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
             public void onSuccess(List<FirebaseVisionFace> firebaseVisionFaces) {
                 processFaceResult(firebaseVisionFaces);
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CameraActivity.this, e.getMessage(),
-                        Toast.LENGTH_LONG).show();
-            }
-        });
+        }).addOnFailureListener(e -> Toast.makeText(CameraActivity.this, e.getMessage(),
+                Toast.LENGTH_LONG).show());
     }
 
     private void processFaceResult(List<FirebaseVisionFace> firebaseVisionFaces) {
