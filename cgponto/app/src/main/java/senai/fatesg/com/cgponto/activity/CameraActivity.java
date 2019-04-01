@@ -16,8 +16,10 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
+import com.google.firebase.ml.vision.face.FirebaseVisionFaceContour;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
+import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
 import com.wonderkiln.camerakit.CameraKitError;
 import com.wonderkiln.camerakit.CameraKitEvent;
 import com.wonderkiln.camerakit.CameraKitEventListener;
@@ -79,10 +81,9 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
         btnPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CameraActivity.this, String.valueOf(graphicOverlay.getHeight()), Toast.LENGTH_LONG).show();
-                graphicOverlay.clear();
                 cameraView.start();
                 cameraView.captureImage();
+                graphicOverlay.clear();
             }
         });
     }
@@ -125,8 +126,9 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
 
         FirebaseVisionFaceDetectorOptions options =
                 new FirebaseVisionFaceDetectorOptions.Builder()
-                        .setClassificationMode(FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS)
-                        .enableTracking()
+                        .setPerformanceMode(FirebaseVisionFaceDetectorOptions.ACCURATE)
+                        .setLandmarkMode(FirebaseVisionFaceDetectorOptions.ALL_LANDMARKS)
+                        .setContourMode(FirebaseVisionFaceDetectorOptions.ALL_CONTOURS)
                         .build();
 
         FirebaseVisionFaceDetector detector = FirebaseVision.getInstance()
@@ -147,6 +149,7 @@ public class CameraActivity extends AppCompatActivity implements ComponentsInit 
             Rect bounds = face.getBoundingBox();
             RectOverlay rect = new RectOverlay(graphicOverlay, bounds);
             graphicOverlay.add(rect);
+
         });
 
         waitingDialog.dismiss();
