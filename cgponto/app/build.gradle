@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.android.gms.strict-version-matcher-plugin'
+
 
 android {
     compileSdkVersion 28
@@ -49,3 +49,5 @@ dependencies {
     implementation files('libs/additionnal.jar')
     implementation files('libs/mail.jar')
 }
+
+apply plugin: 'com.google.gms.google-services'
