@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import senai.fatesg.com.cgponto.R;
 
-public class IntroActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private static final int TIME_OUT = 2000;
 
@@ -15,15 +15,12 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.activity_splash);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(IntroActivity.this, LoginActivity.class);
-                startActivity(i);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+            startActivity(i);
+            finish();
         }, TIME_OUT);
     }
 }
