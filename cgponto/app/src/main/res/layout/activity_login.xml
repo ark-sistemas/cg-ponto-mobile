@@ -26,7 +26,7 @@
             android:fontFamily="sans-serif-condensed"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:text="@string/label_intro"
+            android:text="@string/label_splash"
             android:gravity="center"
             android:textColor="@color/textColor"/>
 

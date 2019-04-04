@@ -3,11 +3,17 @@
 
     <!-- LABELS (TextViews) -->
 
-    <string name="label_intro">CG Ponto</string>
+    <string name="label_splash">CG Ponto</string>
     <string name="label_user">Usuário</string>
     <string name="label_passwd">Senha</string>
     <string name="label_forgot_passwd">Esqueci minha senha</string>
     <string name="label_passwd_redefinition">Redefinir senha</string>
+    
+    <string name="label_slide_login">Faça login utilizando seu e-mail cadastrado
+    e sua senha</string>
+    <string name="label_slide_selfie">Tire uma foto de seu rosto na posição vertical</string>
+    <string name="label_slide_recognition">E então o registro de ponto estará disponível!</string>
+
 
     <!-- BUTTONS -->
     <string name="btn_login">Entrar</string>

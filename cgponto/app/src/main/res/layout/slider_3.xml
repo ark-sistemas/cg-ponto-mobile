@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/login-password"/>
+        android:src="@drawable/fc_recognition"/>
     
     <TextView
         android:layout_width="match_parent"
@@ -19,6 +19,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="@string/label_slide_login"/>
+        android:text="@string/label_slide_recognition"/>
 
 </LinearLayout>
