@@ -1,6 +1,6 @@
 package senai.fatesg.com.cgponto.interfaces;
 
-public interface ComponentsInit {
+public interface InitComponent {
 
     void init();
 }

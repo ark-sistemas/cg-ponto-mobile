@@ -3,23 +3,19 @@ package senai.fatesg.com.cgponto.activity;
 import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
-import com.google.firebase.ml.vision.face.FirebaseVisionFaceContour;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
-import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
 import com.wonderkiln.camerakit.CameraKitError;
 import com.wonderkiln.camerakit.CameraKitEvent;
 import com.wonderkiln.camerakit.CameraKitEventListener;
@@ -33,9 +29,9 @@ import dmax.dialog.SpotsDialog;
 import senai.fatesg.com.cgponto.R;
 import senai.fatesg.com.cgponto.common.GraphicOverlay;
 import senai.fatesg.com.cgponto.common.RectOverlay;
-import senai.fatesg.com.cgponto.interfaces.ComponentsInit;
+import senai.fatesg.com.cgponto.interfaces.InitComponent;
 
-public class CameraActivity extends AppCompatActivity implements ComponentsInit {
+public class CameraActivity extends AppCompatActivity implements InitComponent {
 
     CameraView cameraView;
     GraphicOverlay graphicOverlay;
