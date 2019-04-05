@@ -20,6 +20,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="@string/label_slide_selfie"/>
+        android:text="@string/label_slide_fc_pic"/>
 
 </LinearLayout>

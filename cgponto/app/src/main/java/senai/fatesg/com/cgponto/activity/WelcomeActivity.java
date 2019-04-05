@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,23 +14,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.github.paolorotolo.appintro.AppIntro;
+import com.github.paolorotolo.appintro.AppIntroFragment;
+
 import senai.fatesg.com.cgponto.R;
 import senai.fatesg.com.cgponto.adapter.MyPageAdapter;
 
-public class WelcomeActivity extends AppCompatActivity {
-
-    protected Button btnNext;
-    protected Button btnSkip;
-
-    protected ViewPager viewPager;
-
-    protected LinearLayout dotLayout;
-
-    protected TextView[] dotsView;
-
-    protected int[] layouts = new int[]{R.layout.slider_1, R.layout.slider_2, R.layout.slider_3};;
-
-    protected MyPageAdapter myPageAdapter;
+public class WelcomeActivity extends AppIntro {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,70 +31,20 @@ public class WelcomeActivity extends AppCompatActivity {
             finish();
         }
 
-        setContentView(R.layout.activity_welcome);
-        init();
-
-        myPageAdapter = new MyPageAdapter(layouts, getApplicationContext());
-        viewPager.setAdapter(myPageAdapter);
-        pageListener();
-        setDotStatus(0);
-    }
-
-    public void init(){
-
-        btnNext = findViewById(R.id.btn_next);
-        btnSkip = findViewById(R.id.btn_skip);
-        viewPager = findViewById(R.id.view_pager);
-        dotLayout = findViewById(R.id.dot_layout);
+        addSliders();
 
     }
 
-    public void skip(View view) {
+    @Override
+    public void onSkipPressed(Fragment currentFragment) {
+        super.onSkipPressed(currentFragment);
         startMainActivity();
-        finish();
     }
 
-    private void setDotStatus(int page){
-        dotLayout.removeAllViews();
-        dotsView = new TextView[layouts.length];
-        for (int i = 0; i < dotsView.length; i++) {
-            dotsView[i] = new TextView(this);
-            dotsView[i].setText(Html.fromHtml("&#8226"));
-            dotsView[i].setTextSize(30);
-            dotsView[i].setTextColor(Color.parseColor("#a9b4bb"));
-            dotLayout.addView(dotsView[i]);
-        }
-
-        if(dotsView.length > 0){
-            dotsView[page].setTextColor(Color.parseColor("#ffffff"));
-        }
-    }
-
-    private void pageListener(){
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-                if(i == layouts.length - 1){
-                    btnNext.setText(R.string.btn_next_op_1);
-                    btnSkip.setVisibility(View.GONE);
-                } else {
-                    btnNext.setText(R.string.btn_next);
-                    btnSkip.setVisibility(View.VISIBLE);
-                }
-
-                setDotStatus(i);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-
-            }
-        });
+    @Override
+    public void onDonePressed(Fragment currentFragment) {
+        super.onDonePressed(currentFragment);
+        startMainActivity();
     }
 
     private boolean isFirstTimeStartApp(){
@@ -120,19 +61,49 @@ public class WelcomeActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    public void next(View view) {
-        int currentPage = viewPager.getCurrentItem() + 1;
-
-        if(currentPage < layouts.length){
-            viewPager.setCurrentItem(currentPage);
-        } else {
-            startMainActivity();
-        }
-    }
-
     private void startMainActivity(){
         setFirstTimeStartStatus(Boolean.FALSE);
         startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         finish();
+    }
+
+
+
+    private void addSliders(){
+
+        //Login slider
+        addSlide(AppIntroFragment.newInstance(null, null,
+                getResources().getString(R.string.label_slide_login),
+                null,
+                R.drawable.login_password,
+                getResources().getColor(R.color.backgroundColor),
+                getResources().getColor(R.color.textColor),
+                getResources().getColor(R.color.textColor)));
+
+        // Face picture slider
+        addSlide(AppIntroFragment.newInstance(null, null,
+                getResources().getString(R.string.label_slide_fc_pic),
+                null,
+                R.drawable.camera,
+                getResources().getColor(R.color.backgroundColor),
+                getResources().getColor(R.color.textColor),
+                getResources().getColor(R.color.textColor)));
+
+        // Face recognition slider
+        addSlide(AppIntroFragment.newInstance(null, null,
+                getResources().getString(R.string.label_slide_recognition),
+                null,
+                R.drawable.fc_recognition,
+                getResources().getColor(R.color.backgroundColor),
+                getResources().getColor(R.color.textColor),
+                getResources().getColor(R.color.textColor)));
+
+        showSkipButton(true);
+        setProgressButtonEnabled(true);
+        setFadeAnimation();
+//        setZoomAnimation();
+//        setFlowAnimation();
+
+//        setDepthAnimation();
     }
 }

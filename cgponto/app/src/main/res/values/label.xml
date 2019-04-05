@@ -10,9 +10,11 @@
     <string name="label_passwd_redefinition">Redefinir senha</string>
     
     <string name="label_slide_login">Faça login utilizando seu e-mail cadastrado
-    e sua senha</string>
-    <string name="label_slide_selfie">Tire uma foto de seu rosto na posição vertical</string>
-    <string name="label_slide_recognition">E então o registro de ponto estará disponível!</string>
+    e sua senha…</string>
+    <string name="label_slide_fc_pic">Tire uma foto de seu rosto com o
+        celular na posição vertical…</string>
+    <string name="label_slide_recognition">E então o registro de ponto estará disponível com o
+        reconhecimento da sua face!</string>
 
 
     <!-- BUTTONS -->
