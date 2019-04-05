@@ -19,6 +19,7 @@
     <string name="btn_login">Entrar</string>
     <string name="btn_send_email">Enviar</string>
     <string name="btn_next">Próximo</string>
+    <string name="btn_next_op_1">Começar</string>
     <string name="btn_skip">Pular</string>
 
 </resources>
