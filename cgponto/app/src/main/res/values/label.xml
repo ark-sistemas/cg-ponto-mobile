@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="label_intro">CG Ponto</string>
 
+    <!-- LABELS (TextViews) -->
+
+    <string name="label_splash">CG Ponto</string>
     <string name="label_user">Usuário</string>
     <string name="label_passwd">Senha</string>
-    <string name="btn_login">Entrar</string>
-    <string name="btn_send_email">Enviar</string>
-    <string name="btn_pic">Tirar foto</string>
     <string name="label_forgot_passwd">Esqueci minha senha</string>
     <string name="label_passwd_redefinition">Redefinir senha</string>
 
+    <string name="label_slide_login">Faça login utilizando seu e-mail cadastrado
+    e sua senha…</string>
+    <string name="label_slide_fc_pic">Tire uma foto de seu rosto com o
+        celular na posição vertical…</string>
+    <string name="label_slide_recognition">E então o registro de ponto estará disponível com o
+        reconhecimento da sua face!</string>
+
+
+    <!-- BUTTONS -->
+    <string name="btn_login">Entrar</string>
+    <string name="btn_send_email">Enviar</string>
+    <string name="btn_pic">Tirar foto</string>
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".activity.IntroActivity">
+    tools:context=".activity.SplashActivity">
 
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:fontFamily="sans-serif-condensed"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:text="@string/label_intro"
+            android:text="@string/label_splash"
             android:gravity="center"
             android:textColor="@color/textColor"/>
 

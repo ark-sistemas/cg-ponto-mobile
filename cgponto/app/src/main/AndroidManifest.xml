@@ -13,6 +13,8 @@
         android:theme="@style/AppBase">
         <activity android:name=".activity.CameraActivity"/>
         <activity android:name=".activity.IntroActivity">
+        <activity android:name=".activity.WelcomeActivity"></activity>
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
