@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -76,27 +77,27 @@ public class WelcomeActivity extends AppIntro {
                 getResources().getString(R.string.label_slide_login),
                 null,
                 R.drawable.login_password,
-                getResources().getColor(R.color.backgroundColor),
-                getResources().getColor(R.color.textColor),
-                getResources().getColor(R.color.textColor)));
+                ContextCompat.getColor(this, R.color.backgroundColor),
+                ContextCompat.getColor(this, R.color.textColor),
+                ContextCompat.getColor(this, R.color.textColor)));
 
         // Face picture slider
         addSlide(AppIntroFragment.newInstance(null, null,
                 getResources().getString(R.string.label_slide_fc_pic),
                 null,
-                R.drawable.camera,
-                getResources().getColor(R.color.backgroundColor),
-                getResources().getColor(R.color.textColor),
-                getResources().getColor(R.color.textColor)));
+                R.drawable.opt_camera,
+                ContextCompat.getColor(this, R.color.backgroundColor),
+                ContextCompat.getColor(this, R.color.textColor),
+                ContextCompat.getColor(this, R.color.textColor)));
 
         // Face recognition slider
         addSlide(AppIntroFragment.newInstance(null, null,
                 getResources().getString(R.string.label_slide_recognition),
                 null,
-                R.drawable.fc_recognition,
-                getResources().getColor(R.color.backgroundColor),
-                getResources().getColor(R.color.textColor),
-                getResources().getColor(R.color.textColor)));
+                R.drawable.opt_fc_recognition,
+                ContextCompat.getColor(this, R.color.backgroundColor),
+                ContextCompat.getColor(this, R.color.textColor),
+                ContextCompat.getColor(this, R.color.textColor)));
 
         showSkipButton(true);
         setProgressButtonEnabled(true);
