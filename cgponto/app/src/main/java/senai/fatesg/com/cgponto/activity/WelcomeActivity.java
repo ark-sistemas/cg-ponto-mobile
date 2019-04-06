@@ -6,20 +6,12 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 
 import senai.fatesg.com.cgponto.R;
-import senai.fatesg.com.cgponto.adapter.MyPageAdapter;
 
 public class WelcomeActivity extends AppIntro {
 
@@ -102,9 +94,12 @@ public class WelcomeActivity extends AppIntro {
         showSkipButton(true);
         setProgressButtonEnabled(true);
         setFadeAnimation();
-//        setZoomAnimation();
-//        setFlowAnimation();
 
-//        setDepthAnimation();
+        setColorDoneText(ContextCompat.getColor(this, R.color.textColor));
+        setColorSkipButton(ContextCompat.getColor(this, R.color.textColor));
+        setNextArrowColor(ContextCompat.getColor(this, R.color.textColor));
+        setIndicatorColor(ContextCompat.getColor(this, R.color.textColor),
+                Color.parseColor("#56aaff"));
+
     }
 }
