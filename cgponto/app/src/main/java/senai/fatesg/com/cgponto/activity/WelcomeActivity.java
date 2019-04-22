@@ -56,7 +56,7 @@ public class WelcomeActivity extends AppIntro {
 
     private void startMainActivity(){
         setFirstTimeStartStatus(Boolean.FALSE);
-        startActivity(new Intent(WelcomeActivity.this, CameraActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         finish();
     }
 

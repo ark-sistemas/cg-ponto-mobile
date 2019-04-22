@@ -6,24 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".activity.CameraActivity">
 
-    <com.wonderkiln.camerakit.CameraView
-        android:id="@+id/camera_view"
-        android:layout_above="@+id/btn_take_pic"
+    <ImageView
+        android:id="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:ckFacing="front"/>
-
-    <senai.fatesg.com.cgponto.common.GraphicOverlay
-        android:id="@+id/graphic_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btn_take_pic"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_take_pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/btn_pic"/>
+        android:text="@string/btn_pic"
+        android:onClick="sendTakePictureIntent"/>
 
 </RelativeLayout>
