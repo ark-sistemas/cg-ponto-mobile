@@ -58,7 +58,6 @@ dependencies {
     implementation files('libs/activation.jar')
     implementation files('libs/additionnal.jar')
     implementation files('libs/mail.jar')
-    implementation project(':openCVLibrary2411')
 }
 
 //apply plugin: 'com.google.gms.google-services'
