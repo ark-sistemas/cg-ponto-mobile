@@ -4,20 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context=".activity.CameraActivity">
 
     <ImageView
         android:id="@+id/picture"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:layout_height="390dp"
+        android:background="@drawable/blue_smiley"
+        android:layout_marginTop="100dp"
+        />
 
     <Button
         android:id="@+id/btn_take_pic"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_rounded"
+        android:textColor="@color/buttonTextColor"
         android:text="@string/btn_pic"
-        android:onClick="sendTakePictureIntent"/>
+        android:layout_marginBottom="50dp"/>
 
 </RelativeLayout>

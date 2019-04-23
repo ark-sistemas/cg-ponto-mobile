@@ -2,7 +2,6 @@
 <resources>
 
     <!-- LABELS (TextViews) -->
-
     <string name="label_splash">CG Ponto</string>
     <string name="label_user">Usuário</string>
     <string name="label_passwd">Senha</string>
@@ -16,6 +15,11 @@
     <string name="label_slide_recognition">E então o registro de ponto estará disponível com o
         reconhecimento da sua face!</string>
 
+    <!-- ALERT DIALOG -->
+    <string name="label_dialog_title">Escolhe uma ação</string>
+    <string name="label_dialog_message">Deseja salvar a foto?</string>
+    <string name="label_dialog_yes">Sim</string>
+    <string name="label_dialog_no">Não</string>
 
     <!-- BUTTONS -->
     <string name="btn_login">Entrar</string>
