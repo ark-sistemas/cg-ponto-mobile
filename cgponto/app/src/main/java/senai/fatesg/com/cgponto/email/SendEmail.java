@@ -82,14 +82,14 @@ public class SendEmail extends AsyncTask<Void, Void, Void> {
         session = Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
+                        return new PasswordAuthentication(Config.EMAIL.getConfig(), Config.PASSWORD.getConfig());
                     }
                 });
 
         try {
             MimeMessage mm = new MimeMessage(session);
 
-            mm.setFrom(new InternetAddress(Config.EMAIL));
+            mm.setFrom(new InternetAddress(Config.EMAIL.getConfig()));
             mm.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             mm.setSubject(subject);
             mm.setText(message);
