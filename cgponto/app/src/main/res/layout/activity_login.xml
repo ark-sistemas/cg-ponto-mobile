@@ -73,7 +73,7 @@
             android:background="@drawable/btn_rounded"
             android:text="@string/btn_login"
             android:textColor="@color/buttonTextColor"
-
+            android:onClick="entrar"
             />
 
         <Space

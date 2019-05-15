@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/spinnerBackgroundColor"/>
+            <corners
+                android:radius="30dp" />
+            <padding
+                android:left="3dp"
+                android:top="3dp"
+                android:right="3dp"
+                android:bottom="3dp" />
+        </shape>
+    </item>
+    <item android:gravity="center|right" android:drawable="@drawable/drop_down_arrow_spn"/>
+    <!--<item android:top="12dp" android:right="15dp">-->
+        <!--<bitmap android:gravity="top|right" android:src="@drawable/down_arrow_son"/>-->
+    <!--</item>-->
+
+</layer-list>

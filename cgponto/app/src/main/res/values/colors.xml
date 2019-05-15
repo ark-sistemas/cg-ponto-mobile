@@ -8,6 +8,7 @@
     <color name="textColor">#1E588C</color>
     <color name="buttonColor">#0080FF</color>
     <color name="buttonTextColor">#FFFFFF</color>
+    <color name="spinnerBackgroundColor">#98CEFF</color>
     <!--<color name="backgroundColor">#0080FF</color>-->
     <!--<color name="textColor">#FFFFFF</color>-->
 

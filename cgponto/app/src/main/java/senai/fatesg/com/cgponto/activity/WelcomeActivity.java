@@ -18,7 +18,7 @@ import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 
 import senai.fatesg.com.cgponto.R;
-import senai.fatesg.com.cgponto.adapter.MyPageAdapter;
+//import senai.fatesg.com.cgponto.adapter.MyPageAdapter;
 
 public class WelcomeActivity extends AppIntro {
 
