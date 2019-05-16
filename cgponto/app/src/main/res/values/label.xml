@@ -2,13 +2,18 @@
 <resources>
 
     <!-- LABELS (TextViews) -->
-
     <string name="label_splash">CG Ponto</string>
     <string name="label_user">Usuário</string>
     <string name="label_passwd">Senha</string>
     <string name="label_forgot_passwd">Esqueci minha senha</string>
     <string name="label_passwd_redefinition">Redefinir senha</string>
-    
+    <string name="label_spn_cause">Motivo</string>
+    <string name="label_cause_description">Descrição</string>
+    <string name="label_initial_hour">Hora de início</string>
+    <string name="label_initial_date">Data de início</string>
+    <string name="label_final_hour">Hora do fim</string>
+    <string name="label_final_date">Data do fim</string>
+
     <string name="label_slide_login">Faça login utilizando seu e-mail cadastrado
     e sua senha…</string>
     <string name="label_slide_fc_pic">Tire uma foto de seu rosto com o
@@ -16,12 +21,15 @@
     <string name="label_slide_recognition">E então o registro de ponto estará disponível com o
         reconhecimento da sua face!</string>
 
+    <!-- ALERT DIALOG -->
+    <string name="label_dialog_title">Escolhe uma ação</string>
+    <string name="label_dialog_message">Deseja salvar a foto?</string>
+    <string name="label_dialog_yes">Sim</string>
+    <string name="label_dialog_no">Não</string>
 
     <!-- BUTTONS -->
     <string name="btn_login">Entrar</string>
-    <string name="btn_send_email">Enviar</string>
-    <string name="btn_next">Próximo</string>
-    <string name="btn_next_op_1">Começar</string>
-    <string name="btn_skip">Pular</string>
-
+    <string name="btn_send">Enviar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_pic">Tirar foto</string>
 </resources>

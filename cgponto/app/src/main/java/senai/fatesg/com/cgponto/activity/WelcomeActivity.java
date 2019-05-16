@@ -5,20 +5,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
-import android.text.Html;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 
 import senai.fatesg.com.cgponto.R;
-//import senai.fatesg.com.cgponto.adapter.MyPageAdapter;
 
 public class WelcomeActivity extends AppIntro {
 
@@ -76,34 +69,37 @@ public class WelcomeActivity extends AppIntro {
                 getResources().getString(R.string.label_slide_login),
                 null,
                 R.drawable.login_password,
-                getResources().getColor(R.color.backgroundColor),
-                getResources().getColor(R.color.textColor),
-                getResources().getColor(R.color.textColor)));
+                ContextCompat.getColor(this, R.color.backgroundColor),
+                ContextCompat.getColor(this, R.color.textColor),
+                ContextCompat.getColor(this, R.color.textColor)));
 
         // Face picture slider
         addSlide(AppIntroFragment.newInstance(null, null,
                 getResources().getString(R.string.label_slide_fc_pic),
                 null,
-                R.drawable.camera,
-                getResources().getColor(R.color.backgroundColor),
-                getResources().getColor(R.color.textColor),
-                getResources().getColor(R.color.textColor)));
+                R.drawable.opt_camera,
+                ContextCompat.getColor(this, R.color.backgroundColor),
+                ContextCompat.getColor(this, R.color.textColor),
+                ContextCompat.getColor(this, R.color.textColor)));
 
         // Face recognition slider
         addSlide(AppIntroFragment.newInstance(null, null,
                 getResources().getString(R.string.label_slide_recognition),
                 null,
-                R.drawable.fc_recognition,
-                getResources().getColor(R.color.backgroundColor),
-                getResources().getColor(R.color.textColor),
-                getResources().getColor(R.color.textColor)));
+                R.drawable.opt_fc_recognition,
+                ContextCompat.getColor(this, R.color.backgroundColor),
+                ContextCompat.getColor(this, R.color.textColor),
+                ContextCompat.getColor(this, R.color.textColor)));
 
         showSkipButton(true);
         setProgressButtonEnabled(true);
         setFadeAnimation();
-//        setZoomAnimation();
-//        setFlowAnimation();
 
-//        setDepthAnimation();
+        setColorDoneText(ContextCompat.getColor(this, R.color.textColor));
+        setColorSkipButton(ContextCompat.getColor(this, R.color.textColor));
+        setNextArrowColor(ContextCompat.getColor(this, R.color.textColor));
+        setIndicatorColor(ContextCompat.getColor(this, R.color.textColor),
+                Color.parseColor("#56aaff"));
+
     }
 }

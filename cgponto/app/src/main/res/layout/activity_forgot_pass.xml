@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
             android:background="@drawable/btn_rounded"
-            android:text="@string/btn_send_email"
+            android:text="@string/btn_send"
             android:textColor="@color/buttonTextColor"
             android:onClick="sendEmail"/>
     </LinearLayout>

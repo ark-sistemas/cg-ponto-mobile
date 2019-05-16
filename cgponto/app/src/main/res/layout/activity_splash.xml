@@ -21,12 +21,6 @@
             android:background="@drawable/clock_md"
             android:foregroundGravity="center"/>
 
-        <!--<pl.droidsonroids.gif.GifTextView-->
-            <!--android:id="@+id/introGif"-->
-            <!--android:layout_width="200dp"-->
-            <!--android:layout_height="200dp"-->
-            <!--android:background="@drawable/blue_clock_gif"/>-->
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

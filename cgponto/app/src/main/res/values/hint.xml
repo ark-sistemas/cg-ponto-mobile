@@ -3,4 +3,5 @@
     <string name="hint_user">Digite seu usuário</string>
     <string name="hint_pass">Digite sua senha</string>
     <string name="hint_email_redef">Digite seu e-mail cadastrado</string>
+    <string name="hint_camera_picture">A foto não pode ser tirada, tente novamente…</string>
 </resources>

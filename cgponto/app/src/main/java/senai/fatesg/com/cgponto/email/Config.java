@@ -1,6 +1,16 @@
 package senai.fatesg.com.cgponto.email;
 
-public class Config {
-    public static final String EMAIL = "EMAIL";
-    public static final String PASSWORD = "PASSWORD";
+public enum Config {
+
+    EMAIL("EMAIL"), PASSWORD("PASSWORD");
+
+    private String config;
+
+    Config(String config){
+        this.config = config;
+    }
+
+    public String getConfig() {
+        return config;
+    }
 }

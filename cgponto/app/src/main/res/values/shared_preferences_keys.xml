@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="face_countours_X">faceCountourX_</string>
+    <string name="face_countours_Y">faceCountourY_</string>
+    <string name="left_eyebrow_top_countours_X">leftEyebrowTopCountourX_</string>
+    <string name="left_eyebrow_top_countours_Y">leftEyebrowTopCountourY_</string>
+    <string name="left_eyebrow_bottom_countours_X">leftEyebrowBottomCountourX_</string>
+    <string name="left_eyebrow_bottom_countours_Y">leftEyebrowBottomCountourY_</string>
+    <string name="right_eyebrow_top_countours_X">rightEyebrowTopCountourX_</string>
+    <string name="right_eyebrow_top_countours_Y">rightEyebrowTopCountourY_</string>
+    <string name="right_eyebrow_bottom_countours_X">rightEyebrowBottomCountourX_</string>
+    <string name="right_eyebrow_bottom_countours_Y">rightEyebrowBottomCountourY_</string>
+    <string name="left_eye_countours_X">leftEyeCountourX_</string>
+    <string name="left_eye_countours_Y">leftEyeCountourY_</string>
+    <string name="right_eye_countours_X">rightEyeCountourX_</string>
+    <string name="right_eye_countours_Y">rightEyeCountourY_</string>
+    <string name="nose_bottom_countours_X">noseBottomCountourX_</string>
+    <string name="nose_bottom_countours_Y">noseBottomCountourY_</string>
+    <string name="nose_bridge_countours_X">noseBridgeCountorX_</string>
+    <string name="nose_bridge_countours_Y">noseBridgeCountorY_</string>
+    <string name="upper_lip_top_countours_X">upperLipTopCountourX_</string>
+    <string name="upper_lip_top_countours_Y">upperLipTopCountourY_</string>
+    <string name="upper_lip_bottom_countours_X">upperLipBottomCountourX_</string>
+    <string name="upper_lip_bottom_countours_Y">upperLipBottomCountourY_</string>
+    <string name="lower_lip_top_countours_X">lowerLipTopCountourX_</string>
+    <string name="lower_lip_top_countours_Y">lowerLipTopCountourY_</string>
+    <string name="lower_lip_bottom_countours_X">lowerLipBottomCountourX_</string>
+    <string name="lower_lip_bottom_countours_Y">lowerLipBottomCountourY_</string>
+</resources>

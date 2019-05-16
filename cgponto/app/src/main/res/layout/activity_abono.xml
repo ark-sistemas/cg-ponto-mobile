@@ -6,14 +6,247 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".activity.AbonoActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginStart="44dp"
+        android:layout_gravity="start"
+        android:text="@string/label_spn_cause"
+        android:textColor="@color/textColor"/>
 
     <Spinner
         android:id="@+id/spinner_motivos"
-        android:layout_width="360dp"
+        android:layout_width="330dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:background="@drawable/spinner_rounded"
-        android:popupBackground="@color/spinnerBackgroundColor"/>
+        android:popupBackground="@color/spinnerBackgroundColor"
+        android:onClick="chooseCause"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="44dp"
+        android:layout_gravity="start"
+        android:text="@string/label_cause_description"
+        android:textColor="@color/textColor"/>
+
+    <EditText
+        android:id="@+id/edt_description"
+        android:layout_width="330dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_text_rounded"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_upload_file"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:src="@drawable/upload_16"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/buttonColor"
+            android:clickable="false"/>
+
+        <TextView
+            android:id="@+id/txt_file_name"
+            android:layout_width="267dp"
+            android:layout_height="40dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            
+            <LinearLayout
+                android:layout_width="130dp"
+                android:gravity="start"
+                android:layout_marginEnd="30dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="@string/label_initial_hour"
+                    android:textColor="@color/textColor"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/label_final_hour"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_initial_hour"
+                android:layout_width="98dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="70dp"
+                android:layout_gravity="center"
+                android:inputType="time"
+                android:background="@drawable/optional_edit_text_rounded"/>
+
+            <EditText
+                android:id="@+id/edt_final_hour"
+                android:layout_width="98dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:inputType="time"
+                android:background="@drawable/optional_edit_text_rounded"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginEnd="70dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="@string/label_initial_date"
+                    android:textColor="@color/textColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="22dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="@string/label_final_date"
+                    android:textColor="@color/textColor"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_initial_date"
+                android:layout_width="140dp"
+                android:layout_marginEnd="55dp"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:background="@drawable/optional_edit_text_rounded"/>
+
+            <EditText
+                android:id="@+id/edt_final_date"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:background="@drawable/optional_edit_text_rounded"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/btn_send_cause"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_rounded"
+            android:text="@string/btn_send"
+            android:textColor="@color/buttonTextColor"/>
+
+        <Button
+            android:id="@+id/btn_cancel_cause"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_rounded"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/buttonTextColor"/>
+
+    </LinearLayout>
 
 </LinearLayout>
+
