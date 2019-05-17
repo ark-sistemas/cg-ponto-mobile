@@ -21,14 +21,14 @@
         android:textColor="@color/textColor"/>
 
     <Spinner
-        android:id="@+id/spinner_motivos"
+        android:id="@+id/spinner_cause"
         android:layout_width="330dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:background="@drawable/spinner_rounded"
         android:popupBackground="@color/spinnerBackgroundColor"
-        android:onClick="chooseCause"/>
+        android:layout_gravity="center"/>
+
 
     <TextView
         android:layout_width="120dp"
@@ -56,15 +56,15 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.design.widget.FloatingActionButton
+        <ImageButton
             android:id="@+id/btn_upload_file"
-            android:layout_width="100dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="9dp"
             android:src="@drawable/upload_16"
             android:layout_gravity="center"
-            android:backgroundTint="@color/buttonColor"
-            android:clickable="false"/>
+            android:background="@drawable/image_button_rounded"
+            android:onClick="uploadFile"/>
 
         <TextView
             android:id="@+id/txt_file_name"
@@ -233,7 +233,7 @@
             android:id="@+id/btn_send_cause"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="60dp"
             android:background="@drawable/btn_rounded"
             android:text="@string/btn_send"
             android:textColor="@color/buttonTextColor"/>

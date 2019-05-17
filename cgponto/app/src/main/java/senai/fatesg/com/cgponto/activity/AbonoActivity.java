@@ -1,14 +1,15 @@
 package senai.fatesg.com.cgponto.activity;
 
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,22 +18,21 @@ import senai.fatesg.com.cgponto.interfaces.InitComponent;
 
 public class AbonoActivity extends AppCompatActivity implements InitComponent {
 
-    Spinner spnMotivos;
+    Spinner spnCause;
     EditText edtDescription;
-    FloatingActionButton btnUploadFile;
     TextView txtFileName;
     EditText edtInitialHour;
     EditText edtFinalHour;
     EditText edtInitialDate;
     EditText edtFinalDate;
+    ImageButton btnUploadFile;
     Button btnSendCause;
     Button btnCancelCause;
 
     @Override
     public void initComponents() {
-        spnMotivos = findViewById(R.id.spinner_motivos);
+        spnCause = findViewById(R.id.spinner_cause);
         edtDescription = findViewById(R.id.edt_description);
-        btnUploadFile = findViewById(R.id.btn_upload_file);
         txtFileName = findViewById(R.id.txt_file_name);
         edtInitialHour = findViewById(R.id.edt_initial_hour);
         edtFinalHour = findViewById(R.id.edt_final_hour);
@@ -40,6 +40,7 @@ public class AbonoActivity extends AppCompatActivity implements InitComponent {
         edtFinalDate = findViewById(R.id.edt_final_date);
         btnSendCause = findViewById(R.id.btn_send_cause);
         btnCancelCause = findViewById(R.id.btn_cancel_cause);
+        btnUploadFile = findViewById(R.id.btn_upload_file);
     }
 
 
@@ -54,8 +55,21 @@ public class AbonoActivity extends AppCompatActivity implements InitComponent {
         //Set data in spinner
         setSpinnerData();
 
+
     }
 
+    public void uploadFile(View view) {
+        int spnIndex = spnCause.getSelectedItemPosition();
+
+        if(isCauseWithFile(spnIndex)){
+            Toast.makeText(this, "Envie documento", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "Não necessita de documento", Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    // ---------------------- PRIVATE METHODS --------------------------
     private void setSpinnerData(){
         ArrayList<String> motivos = new ArrayList<>();
         motivos.add("AUSÊNCIA JUSTIFICADA");
@@ -67,16 +81,10 @@ public class AbonoActivity extends AppCompatActivity implements InitComponent {
 
         spnArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spnMotivos.setAdapter(spnArrayAdapter);
+        spnCause.setAdapter(spnArrayAdapter);
     }
 
-    public void chooseCause(View view) {
-
-        int spnIndex = spnMotivos.getSelectedItemPosition();
-
-        if(spnIndex == 2){
-            btnUploadFile.setTooltipText("Selecione o documento de abono");
-            btnUploadFile.setClickable(true);
-        }
+    private boolean isCauseWithFile(int spnIndex){
+        return spnIndex == 2;
     }
 }
