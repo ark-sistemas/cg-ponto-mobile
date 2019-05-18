@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TelaPrincialActivity"
+    android:background="@color/backgroundColor">
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/new_game"
+            android:icon="@drawable/ic_new_game"
+            android:title="@string/new_game"
+            android:showAsAction="ifRoom"/>
+        <item android:id="@+id/help"
+            android:icon="@drawable/ic_help"
+            android:title="@string/help" />
+    </menu>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="164dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="96dp"
+        android:background="@drawable/btn_rounded"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Registrar Ponto"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="164dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="96dp"
+        android:background="@drawable/btn_rounded"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Solicitar Abono"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="152dp"
+        android:layout_height="116dp"
+        android:drawableBottom="@drawable/ic_action_acess_camera"
+        android:padding="38dp"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="120dp"
+        android:background="@color/backgroundColor"/>
+
+</android.support.constraint.ConstraintLayout>
