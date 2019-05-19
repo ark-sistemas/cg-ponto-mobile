@@ -7,7 +7,7 @@
     android:background="@color/backgroundColor"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".activity.AbonoActivity">
+    tools:context=".activity.JustificativaActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -48,7 +48,10 @@
         android:layout_height="150dp"
         android:layout_marginTop="5dp"
         android:layout_gravity="center"
-        android:background="@drawable/edit_text_rounded"/>
+        android:gravity="start|top"
+        android:background="@drawable/edit_text_rounded"
+        android:inputType="textMultiLine"
+        android:theme="@style/EditTextViewFocus"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,6 +73,8 @@
             android:id="@+id/txt_file_name"
             android:layout_width="267dp"
             android:layout_height="40dp"
+            android:textSize="20sp"
+            android:gravity="start|center"
             android:visibility="gone"/>
     </LinearLayout>
 
@@ -236,7 +241,8 @@
             android:layout_marginEnd="60dp"
             android:background="@drawable/btn_rounded"
             android:text="@string/btn_send"
-            android:textColor="@color/buttonTextColor"/>
+            android:textColor="@color/buttonTextColor"
+            android:onClick="sendCause"/>
 
         <Button
             android:id="@+id/btn_cancel_cause"
