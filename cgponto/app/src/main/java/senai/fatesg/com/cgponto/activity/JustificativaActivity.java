@@ -19,7 +19,9 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -29,10 +31,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import senai.fatesg.com.cgponto.R;
+import senai.fatesg.com.cgponto.bootstrap.APIClient;
 import senai.fatesg.com.cgponto.interfaces.InitComponent;
 import senai.fatesg.com.cgponto.interfaces.ServiceConsumer;
 import senai.fatesg.com.cgponto.model.Justificativa;
 import senai.fatesg.com.cgponto.model.MotivoAbono;
+import senai.fatesg.com.cgponto.resources.GeneralResource;
 import senai.fatesg.com.cgponto.resources.JustificativaResource;
 
 public class JustificativaActivity extends AppCompatActivity implements InitComponent, ServiceConsumer<Justificativa> {
@@ -65,7 +69,7 @@ public class JustificativaActivity extends AppCompatActivity implements InitComp
         btnCancelCause = findViewById(R.id.btn_cancel_cause);
         btnUploadFile = findViewById(R.id.btn_upload_file);
 
-
+        justificativaResource = APIClient.getClient().create(JustificativaResource.class);
 
     }
 
@@ -99,34 +103,39 @@ public class JustificativaActivity extends AppCompatActivity implements InitComp
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        Optional<Uri> opUri = Optional.ofNullable(Objects.requireNonNull(data).getData());
         if(requestCode == 1212){
             if(resultCode == RESULT_OK){
-                Uri uri = opUri.get();
+                Uri uri = Objects.requireNonNull(data).getData();
                 String uriString = uri.toString();
                 File myFile = new File(uriString);
+                Path filePath = Paths.get("");
                 String myFilePath = myFile.getAbsolutePath();
                 String displayName = null;
 
                 try {
                     if (uriString.startsWith("content://")) {
+
                         Cursor cursor = null;
                         try {
                             cursor = this.getContentResolver().query(uri,
                                     null, null, null, null);
                             if (Objects.nonNull(cursor) && cursor.moveToFirst()) {
-                                displayName = cursor
-                                        .getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
-
+                                displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                                filePath = Paths.get(myFile.getAbsolutePath());
+                                fileToSend = cursor.getBlob(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+//                                fileToSend = Files.readAllBytes(filePath);
                             }
                         } finally {
                             cursor.close();
                         }
                     } else if (uriString.startsWith("file://")) {
+                        Toast.makeText(this, "Entrou no if file", Toast.LENGTH_SHORT).show();
                         displayName = myFile.getName();
                     }
 
-                    fileToSend = Files.readAllBytes(Paths.get(uriString));
+                    Files.write(filePath, fileToSend);
+
+
                 } catch (IOException e){
                     Log.d("byte", "byte didn't read");
                 }
@@ -139,6 +148,7 @@ public class JustificativaActivity extends AppCompatActivity implements InitComp
 
     public void sendCause(View view) {
         if(validateData()){
+            justificativa = new Justificativa();
             justificativa.setTitulo(spnCause.getSelectedItem().toString());
             justificativa.setDescricao(edtDescription.getText().toString());
             justificativa.setAnexoDocumento(fileToSend);
@@ -146,6 +156,7 @@ public class JustificativaActivity extends AppCompatActivity implements InitComp
             justificativa.setHorasDiariaTermino(edtFinalHour.getText().toString());
             justificativa.setDataInicio(edtInitialDate.getText().toString());
             justificativa.setDataTermino(edtFinalDate.getText().toString());
+
             consuming(justificativa);
         }
     }

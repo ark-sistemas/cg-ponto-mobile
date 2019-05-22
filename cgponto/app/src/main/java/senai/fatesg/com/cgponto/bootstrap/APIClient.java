@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-    private final static String ENDPOINT = "";
+    private final static String ENDPOINT = "http://192.168.43.56:8089";
 
     public static Retrofit getClient(){
 
@@ -17,7 +17,7 @@ public class APIClient {
         OkHttpClient httpClient = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl(ENDPOINT)
+                .baseUrl(ENDPOINT.concat("/justificativa/"))
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient).build();
 

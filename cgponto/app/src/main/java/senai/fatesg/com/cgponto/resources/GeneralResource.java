@@ -12,19 +12,19 @@ import retrofit2.http.Path;
 
 public interface GeneralResource<T> {
 
-    @GET("/get")
+    @GET("get")
     Call<List<T>> get();
 
-    @GET("/get/{registro}/{id}")
+    @GET("get/{id}")
     Call<T> get(@Path("id") Long id);
 
     @POST("/post")
     Call<T> post(@Body T object);
 
-    @PUT("/put/{id}")
+    @PUT("put/{id}")
     Call<T> put(@Body T object);
 
-    @DELETE("/delete/{id}")
+    @DELETE("delete/{id}")
     Call<Void> delete(@Body T object);
 
 }
