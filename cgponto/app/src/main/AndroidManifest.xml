@@ -37,7 +37,6 @@
         <activity android:name=".activity.FaceRecognitionAppActivity"/>
         <activity android:name=".activity.FaceDetectionActivity"/>
         <activity android:name=".activity.WelcomeActivity"/>
-        <activity android:name=".activity.JustificativaActivity"/>
         <activity android:name=".activity.CameraActivity" />
 
         <activity android:name=".activity.SplashActivity">

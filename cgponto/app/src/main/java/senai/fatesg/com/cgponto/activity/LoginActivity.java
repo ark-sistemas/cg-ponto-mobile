@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        Intent i = new Intent(LoginActivity.this, JustificativaActivity.class);
+//        Intent i = new Intent(LoginActivity.this, JustificativaActivity.class);
 //        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivity(i);
+//        startActivity(i);
     }
 }
