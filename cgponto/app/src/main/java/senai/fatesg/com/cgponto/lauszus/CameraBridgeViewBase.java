@@ -1,6 +1,6 @@
 // Based on: http://stackoverflow.com/questions/14816166/rotate-camera-preview-to-portrait-android-opencv-camera/38210157#38210157
 
-package senai.fatesg.com.cgponto.activity;
+package senai.fatesg.com.cgponto.lauszus;
 
 import android.app.Activity;
 import android.app.AlertDialog;

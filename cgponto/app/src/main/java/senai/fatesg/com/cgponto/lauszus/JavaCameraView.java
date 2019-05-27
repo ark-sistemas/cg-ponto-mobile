@@ -1,6 +1,6 @@
 // Based on: https://github.com/opencv/opencv/blob/master/modules/java/generator/android/java/org/opencv/android/JavaCameraView.java
 
-package senai.fatesg.com.cgponto.recognition;
+package com.lauszus.facerecognitionapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,8 +20,6 @@ import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
 import java.util.List;
-
-import senai.fatesg.com.cgponto.activity.CameraBridgeViewBase;
 
 /**
  * This class is an implementation of the Bridge View between OpenCV and Java Camera.
@@ -149,7 +147,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
             try {
                 Camera.Parameters params = mCamera.getParameters();
                 Log.d(TAG, "getSupportedPreviewSizes()");
-                List<Camera.Size> sizes = params.getSupportedPreviewSizes();
+                List<android.hardware.Camera.Size> sizes = params.getSupportedPreviewSizes();
 
                 if (sizes != null) {
                     /* Select the size that fits surface considering maximum size allowed */
@@ -164,7 +162,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
                     Log.d(TAG, "Set preview size to " + frameSize.width + "x" + frameSize.height);
                     params.setPreviewSize((int)frameSize.width, (int)frameSize.height);
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && !Build.MODEL.equals("GT-I9100"))
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && !android.os.Build.MODEL.equals("GT-I9100"))
                         params.setRecordingHint(true);
 
                     List<String> FocusModes = params.getSupportedFocusModes();

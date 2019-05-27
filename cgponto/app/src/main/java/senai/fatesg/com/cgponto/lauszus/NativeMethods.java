@@ -16,13 +16,15 @@
  * e-mail   :  lauszus@gmail.com
  ******************************************************************************/
 
-package senai.fatesg.com.cgponto.activity;
+package senai.fatesg.com.cgponto.lauszus;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
 import org.opencv.core.Mat;
+
+import senai.fatesg.com.cgponto.lauszus.FaceRecognitionAppActivity;
 
 // All computations is done in an asynchronous task, so we do not skip any frames
 class NativeMethods {

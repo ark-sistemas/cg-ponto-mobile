@@ -22,7 +22,16 @@
 // Modified version of: https://github.com/kcochibili/TinyDB--Android-Shared-Preferences-Turbo
 // Added getListMat and putListMat methods
 
-package senai.fatesg.com.cgponto.recognition;
+package senai.fatesg.com.cgponto.lauszus;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+
+//import com.google.gson.Gson;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -37,15 +46,6 @@ import android.util.Log;
 
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-
-//import com.google.gson.Gson;
 
 
 public class TinyDB {
